@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Cia</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff5f9e,#ffb6c1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    padding:20px;
+    color:white;
+    z-index:10;
+}
+
+h1{
+    font-size:2.8rem;
+    animation:glow 2s infinite alternate;
+}
+
+.age{
+    font-size:1.8rem;
+    margin-top:10px;
+}
+
+.cake{
+    font-size:90px;
+    margin:20px 0;
+    animation:bounce 1.5s infinite;
+}
+
+.message{
+    max-width:600px;
+    margin:auto;
+    font-size:1.2rem;
+    line-height:1.6;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    background:white;
+    color:#ff4f8b;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#surprise{
+    display:none;
+    margin-top:20px;
+    font-size:1.2rem;
+    animation:fadeIn 2s;
+}
+
+.heart{
+    position:absolute;
+    font-size:22px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px yellow;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 Selamat Ulang Tahun Cia 🎉</h1>
+
+<div class="age">🥳 20 Tahun 🥳</div>
+
+<div class="cake">🎂</div>
+
+<div class="message">
+Hari ini adalah hari yang spesial karena seseorang yang hebat
+bertambah usia. Semoga di usia ke-20 ini setiap langkahmu
+dipenuhi kebahagiaan, kesehatan, keberuntungan, dan kesuksesan.
+</div>
+
+<button onclick="bukaHadiah()">
+🎁 Buka Hadiah
+</button>
+
+<div id="surprise">
+✨ Selamat Ulang Tahun Cia ✨<br><br>
+
+Semoga semua impian yang sedang kamu perjuangkan dapat tercapai.
+Tetap menjadi pribadi yang kuat, baik, dan penuh semangat.
+
+Terima kasih sudah menjadi orang yang luar biasa.
+
+❤️ Happy Birthday Cia ❤️
+</div>
+
+</div>
+
+<script>
+function bukaHadiah(){
+    document.getElementById("surprise").style.display = "block";
+}
+
+function buatHati(){
+    let hati = document.createElement("div");
+
+    hati.classList.add("heart");
+    hati.innerHTML = "❤️";
+
+    hati.style.left = Math.random()*100 + "vw";
+    hati.style.animationDuration = (Math.random()*3+2)+"s";
+
+    document.body.appendChild(hati);
+
+    setTimeout(()=>{
+        hati.remove();
+    },5000);
+}
+
+setInterval(buatHati,250);
+</script>
+
+</body>
+</html>
